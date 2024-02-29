@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+    {% block base_head %}
+        <title>Consultar CNPJ</title>
+
+        <meta charset="utf-8" />
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Logo_Receita_Federal_do_Brasil.svg/1194px-Logo_Receita_Federal_do_Brasil.svg.png" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var cnpjInput = document.getElementById('cnpjInput');
+                
+                cnpjInput.addEventListener('input', function() {
+                    var cnpj = this.value.replace(/\D/g, '');
+                    var formattedCnpj = '';
+                    
+                    if (cnpj.length > 0) {
+                        formattedCnpj = cnpj.substring(0, 2) + '.';
+                    }
+                    if (cnpj.length > 2) {
+                        formattedCnpj += cnpj.substring(2, 5) + '.';
+                    }
+                    if (cnpj.length > 5) {
+                        formattedCnpj += cnpj.substring(5, 8) + '/';
+                    }
+                    if (cnpj.length > 8) {
+                        formattedCnpj += cnpj.substring(8, 12) + '-';
+                    }
+                    if (cnpj.length > 12) {
+                        formattedCnpj += cnpj.substring(12, 14);
+                    }
+                    
+                    this.value = formattedCnpj;
+                });
+            });
+            </script>
+    {% endblock %}
+  </head>
+
+  <body>
+    <div class="container">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+  </body>
+</html>

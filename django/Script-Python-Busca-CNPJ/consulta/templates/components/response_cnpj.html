@@ -1,0 +1,38 @@
+{% extends 'components/base.html' %}
+{% block content %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Razão social</th>
+        <th scope="col">codigo_atividade_principal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td>{{ razao_social }}</td>
+        <td>{{ codigo_atividade_principal }}</td>
+      </tr>
+    </tbody>
+  </table>
+<table class="table ">
+    <thead>
+    <tr>
+        <th scope="col">Endereço:</th>
+        <th scope="col">numero</th>
+        <th scope="col">cep</th>
+        <th scope="col">municipio</th>
+        <th scope="col">estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>{{ endereco.numero }}</td>
+        <td>{{ endereco.cep }}</td>
+        <td>{{ endereco.municipio }}</td>
+        <td>{{ endereco.estado }}</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock content %}

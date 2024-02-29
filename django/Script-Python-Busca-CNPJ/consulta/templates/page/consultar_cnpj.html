@@ -1,0 +1,32 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <br/>
+        <br/>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Consultar CNPJ</h2>
+                        <form action="{% url 'consult_cnpj'%}" method="POST">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="cnpjInput" class="form-label">CNPJ</label>
+                                <input type="text" class="form-control" id="cnpjInput" name="cnpj" placeholder="00.000.000/0000-00" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Consultar</button>
+                        </form>
+                        {% if messages %}
+                            {% for m in messages %}
+                                <div class="alert alert-warning" role="alert">
+                                {{ m }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
