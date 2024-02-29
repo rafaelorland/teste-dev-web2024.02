@@ -16,14 +16,16 @@ def consult_cnpj(request):
             response_api_cnpj = requests.get(f'https://receitaws.com.br/v1/cnpj/{cnpj_sem_caracter}')
 
             # processando dados para a resposta
+            data = response_api_cnpj.json()
+
             dados_processados = {
-                "razao_social": response_api_cnpj.json().get('nome'),
-                "codigo_atividade_principal": response_api_cnpj.json()['atividade_principal'][0]['code'],
+                "razao_social": data.get('nome'),
+                "codigo_atividade_principal": data['atividade_principal'][0]['code'],
                 "endereco": {
-                    "numero": response_api_cnpj.json().get("numero"),
-                    "cep": response_api_cnpj.json().get("cep"),
-                    "municipio": response_api_cnpj.json().get("municipio"),
-                    "estado": response_api_cnpj.json().get("uf"),
+                    "numero": data.get("numero"),
+                    "cep": data.get("cep"),
+                    "municipio": data.get("municipio"),
+                    "estado": data.get("uf"),
                 }
             }
 
