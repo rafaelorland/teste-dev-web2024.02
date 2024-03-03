@@ -2,6 +2,9 @@
 
 Antes de tudo, gostaria de expressar minha gratidão pelo convite para participar deste teste técnico. É uma oportunidade que me deixa extremamente satisfeito e estou ansioso para demonstrar minhas habilidades. A seguir, detalharei como testo cada uma das minhas aplicações.
 
+## *Antes de tudo faça o git clone*
+    git clone https://github.com/rafaelorland/teste-dev-web2024.02.git
+
 ## 1. React⚛️:
 Para testar o projeto em React 'formulario_cadastro_de_cliente', siga estes passos:
 
