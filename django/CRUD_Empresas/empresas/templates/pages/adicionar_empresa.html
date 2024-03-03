@@ -1,0 +1,52 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+<a href="{% url 'home_page' %}" class="btn btn-primary">Voltar</a>
+<div class="container">
+  <div class="container" style="width: 700px;">
+    <h1>Inserir Empresa</h1>
+  </div>
+  <form method="post" id="pendencia-form">
+    {% csrf_token %}
+
+    <div class="container" style="width: 700px;">
+      <div class="form-group">
+        <label>Razão Social:</label>
+        <input type="text" class="form-control" name="razao_social"/>
+      </div>
+  
+      <div class="form-group">
+        <label>Atividade Principal:</label>
+        <input type="text" class="form-control" name="atividade_principal"/>
+      </div>
+
+      <div class="form-group">
+        <label>Numero de Endereço:</label>
+        <input type="text" class="form-control" name="numero_endereco"  />
+      </div>
+  
+      <div class="form-group">
+        <label>Cep:</label>
+        <input type="text" class="form-control" name="cep"/>
+      </div>
+  
+      <div class="form-group">
+        <label>Municipio:</label>
+        <input type="text" class="form-control" name="municipio"/>
+      </div>
+  
+      <div class="form-group">
+        <label>Estado:</label>
+        <input type="text" class="form-control" name="estado"/>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="container" style="width: 700px;">
+      <button type="submit" class="btn btn-primary ">Salvar empresa</button>
+    </div>
+  </form>
+</div>
+  
+{% endblock content %}

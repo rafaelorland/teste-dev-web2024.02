@@ -1,0 +1,37 @@
+{% extends 'components/base.html' %}
+{% block content %}
+<a href="{% url 'home_page' %}" class="btn btn-primary">Voltar</a>
+<br>
+<div class="container text-center">
+  <h1>Selecione a Empresa para {{ titulo }}</h1>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    {% for empresa in empresas %}
+    <div class="col-md-4 mt-2 card-group">
+      <div class="list-group-item card">
+        <div class="d-flex justify-content-between">
+        <a href="{% url index_url id_empresa=empresa.id %}" class="link-dark">
+          <h5>{{ empresa.razao_social }}</h5>
+        </a>
+        <small class="text-muted">{{ empresa.id }}</small>
+        </div>
+        <p>Atividade Principal: {{ empresa.atividade_principal }}</p>
+        <div class="alert alert-success">
+          <h4>Endereço:</h4>
+          <div class="container">
+            <p>Numero de Endereço: {{ empresa.numero_endereco }}</p>
+            <p>CEP: {{ empresa.cep }}</p>
+            <p>Município: {{ empresa.municipio }}</p>
+            <p>Estado: {{ empresa.estado }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<br>
+<br>
+{% endblock content %}

@@ -1,0 +1,47 @@
+{% extends 'components/base.html' %}
+{% block content %}
+<div class="container">
+  <div class="container" style="width: 800px">
+    <div class="alert alert-success my-5">
+        <h1>Sucesso!</h1>
+        <p>Empresa {{ index }} com sucesso!</p>
+    </div>
+</div>
+</div>
+<div class="container" style="width: 800px">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Razão social</th>
+            <th scope="col">codigo_atividade_principal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            
+            <td>{{ razao_social }}</td>
+            <td>{{ codigo_atividade_principal }}</td>
+          </tr>
+        </tbody>
+      </table>
+    <table class="table ">
+        <thead>
+        <tr>
+            <th scope="col">numero</th>
+            <th scope="col">cep</th>
+            <th scope="col">municipio</th>
+            <th scope="col">estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ numero }}</td>
+            <td>{{ cep }}</td>
+            <td>{{ municipio }}</td>
+            <td>{{ estado }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="{% url 'home_page' %}" class="btn btn-primary">Voltar</a>
+</div>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'components/base.html' %}
+{% block content %}
+<br />
+<br />
+<div class="container justify-content-center" style="width: 60%;">
+<div class="card">
+    <div class="card-body">
+    <h1 class="card-title">Excluir Empresa!!!</h1>
+    <div class="alert alert-danger my-4">
+        <b>Dados da Pendência</b>
+        <h5 class="card-title">ID: {{ empresa.id }}</h5>
+        <p class="card-text">Razão Social: {{ empresa.razao_social }}</p>
+        <p class="card-text">Atividade Principal: {{ empresa.atividade_principal}}</p>
+        <p class="card-text">Numero de Endereço: {{ empresa.numero_endereco }}</p>
+        <p class="card-text">Cep: {{ empresa.cep }}</p>
+        <p class="card-text">Município: {{ empresa.municipio }}</p>
+        <p class="card-text">Estado: {{ empresa.estado }}</p>
+    </div>
+    <h4 class="text-center">Confirme a senha para excluir empresa</h4>
+    <form method="POST" action="{% url 'excluir' id_empresa=empresa.id %}">
+        {% csrf_token %}
+        <div class="text-center container" style="width: 50%;">
+        <button type="submit" class="btn btn-danger text-center">Excluir Objeto</button>
+        <br>
+        <a href="{% url 'excluir_empresa' %}" class="btn btn-danger mt-2 text-center">Cancelar exclusão</a>
+        </div>
+    </form>
+    </div>
+</div>
+</div>
+<br>
+<br>
+{% endblock content %}

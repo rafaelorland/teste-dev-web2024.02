@@ -1,0 +1,69 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+<div class="container">
+<br>
+
+<div class="card">
+    <div class="card-header text-black text-center">
+            <h5>Estatísticas de Empresas</h5>
+        </div>
+        <div class="card-body text-center">
+            <div class="row">
+                <div class="alert alert-primary mt-2 mx-auto "style="max-width: 400px;">
+                    <h4>Empresas Cadastradas</h4>
+                    <p>{{ total_empresa }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container card-group">
+    <div class="card">
+        <div class="card-header">
+            <a href="{% url 'adicionar_empresa' %}">
+                <h3>Adicionar Empresa</h3>
+            </a>
+        </div>
+        <div class="card-body">
+            <p class="card-text">É uma função que permite adicionar uma
+                empresa no sistema.</p>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-header">
+                <a href="{% url 'visualizar_empresas' %}">
+                    <h3>Visualizar Empresas</h3>
+                </a>
+            </div>
+            <div class="card-body">
+                <p class="card-text">É uma função que possibilita visualizar as empresas. </p>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-header">
+                <a href="{% url 'modificar_empresa' %}">
+                    <h3>Modificar Empresa</h3>
+                </a>
+            </div>
+            <div class="card-body">
+                <p class="card-text">É uma função que permite modficar os dados da empresa.</p>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-header">
+                <a href="{% url 'excluir_empresa' %}" >
+                    <h3>Excluir Empresa</h3>
+                </a>
+            </div>
+            <div class="card-body">
+                <p class="card-text">É uma função que permite excluir uma empresa.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
